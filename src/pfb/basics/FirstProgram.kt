@@ -14,8 +14,9 @@ class FirstProgram : Application() {
 
     fun tileColors() :  Array<Array<Int>> {
         return arrayOf(
-                arrayOf(0, 255),
-                arrayOf(255, 0)
+                arrayOf(0, 255, 0),
+                arrayOf(255, 0, 255),
+                arrayOf(0, 255, 0)
         )
     }
 
