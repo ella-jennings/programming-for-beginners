@@ -13,10 +13,20 @@ fun main(args: Array<String>) {
 class FirstProgram : Application() {
 
     fun tileColors() :  Array<Array<Int>> {
-        return arrayOf(
-                arrayOf(192, 128),
-                arrayOf(64, 0)
-        )
+        val shades = Array<Array<Int>>(3) {
+            Array<Int>(3) {0}
+        }
+        shades[0][0] = 255
+        shades[0][1] = 255
+        shades[0][2] = 0
+        shades[1][0] = 255
+        shades[1][1] = 0
+        shades[1][2] = 0
+        shades[2][0] = 0
+        shades[2][1] = 0
+        shades[2][2] = 0
+
+        return shades
     }
 
     override fun start(primaryStage: Stage) {
