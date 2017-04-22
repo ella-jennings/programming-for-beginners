@@ -17,17 +17,10 @@ class FirstProgram : Application() {
             Array<Int>(5) {0}
         }
 
-        for (col in 0..4) {
-            shades[1][col] = 65
-        }
-        for (col in 0..4) {
-            shades[2][col] = 130
-        }
-        for (col in 0..4) {
-            shades[3][col] = 195
-        }
-        for (col in 0..4) {
-            shades[4][col] = 255
+        for (row in 0..4) {
+            for (col in 0..4) {
+                shades[row][col] = 128
+            }
         }
         return shades
     }
