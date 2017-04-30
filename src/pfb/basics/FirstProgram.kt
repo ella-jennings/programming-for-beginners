@@ -13,13 +13,17 @@ fun main(args: Array<String>) {
 class FirstProgram : Application() {
 
     fun tileColors() :  Array<Array<Int>> {
-        val shades = Array<Array<Int>>(5) {
-            Array<Int>(5) {0}
+        val shades = Array<Array<Int>>(8) {
+            Array<Int>(8) {0}
         }
 
-        for (row in 0..4) {
-            for (col in 0..4) {
-                shades[row][col] = 128
+        for (row in 0..7) {
+            for (col in 0..7) {
+                if(row < col) {
+                    shades[row][col] = 255
+                } else {
+                    shades[row][col] = 0
+                }
             }
         }
         return shades
