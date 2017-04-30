@@ -19,7 +19,7 @@ class FirstProgram : Application() {
 
         for (row in 0..7) {
             for (col in 0..7) {
-                if(col%2 == 0) {
+                if(col == 0 || col == 2 || row == 0 || row == 2) {
                     shades[row][col] = 0
                 } else {
                     shades[row][col] = 255
