@@ -19,10 +19,10 @@ class FirstProgram : Application() {
 
         for (row in 0..7) {
             for (col in 0..7) {
-                if(row < col) {
-                    shades[row][col] = 255
-                } else {
+                if(row == col) {
                     shades[row][col] = 0
+                } else {
+                    shades[row][col] = 255
                 }
             }
         }
