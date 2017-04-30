@@ -17,15 +17,13 @@ class FirstProgram : Application() {
             Array<Int>(8) {0}
         }
 
-        for (row in 0..7) {
-            for (col in 0..7) {
-                if(row == 1 && col == 1) {
-                    shades[row][col] = 0
-                } else if(row == 6 && col == 6) {
-                    shades[row][col] = 0
-                } else {
-                    shades[row][col] = 255
-                }
+        for (row in 0..7) for (col in 0..7) {
+            if(row == 1 && (col == 1 || col == 6)) {
+                shades[row][col] = 0
+            } else if(row == 6 && (col == 1 || col == 6)) {
+                shades[row][col] = 0
+            } else {
+                shades[row][col] = 255
             }
         }
         return shades
