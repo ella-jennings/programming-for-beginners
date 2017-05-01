@@ -19,10 +19,16 @@ class FirstProgram : Application() {
 
         for (row in 0..15) {
             for (col in 0..15) {
-                val remainder = col % 2
-                if (remainder == 0) {
+                val remaindercol = col % 2
+                val remainderrow = row % 2
+                
+                if (remaindercol == 0 && remainderrow == 1) {
                     shades[row][col] = 0
-                } else {
+                }
+                else if (remaindercol == 1 && remainderrow == 0){
+                    shades[row][col] = 0
+                }
+                else {
                     shades [row][col] = 255
                 }
             }
