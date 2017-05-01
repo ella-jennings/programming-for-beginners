@@ -13,15 +13,15 @@ fun main(args: Array<String>) {
 class FirstProgram : Application() {
 
     fun tileColors() :  Array<Array<Int>> {
-        val shades = Array<Array<Int>>(16) {
-            Array<Int>(16) {0}
+        val shades = Array<Array<Int>>(8) {
+            Array<Int>(8) {0}
         }
 
-        for (row in 0..15) {
-            for (col in 0..15) {
+        for (row in 0..7) {
+            for (col in 0..7) {
                 val remaindercol = col % 2
                 val remainderrow = row % 2
-                
+
                 if (remaindercol == 0 && remainderrow == 1) {
                     shades[row][col] = 0
                 }
