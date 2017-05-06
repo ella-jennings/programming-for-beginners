@@ -1,16 +1,24 @@
 package pfb.basics
 
 fun main(args: Array<String>) {
-    val nameToAge = mutableMapOf<String, Int>()
-    nameToAge.put("Harry", 15)
-    nameToAge.put("Luna", 16)
-    nameToAge.put("Snape", 36)
+    //Record the sightings.
+    val sightings = mutableListOf<String>()
+    sightings.add("emu")
+    sightings.add("magpie")
+    sightings.add("galah")
+    sightings.add("emu")
 
-    nameToAge.put("Luna", 17)
-    nameToAge.remove("Snape")
+    //Count the species.
+    val speciesToCount = mutableMapOf<String, Int>()
+    for (sighting in sightings) {
+        val countSoFar = speciesToCount[sighting] ?:0
+        val updatedCount = countSoFar + 1
+        speciesToCount.put(sighting, updatedCount)
+    }
 
-    for (name in nameToAge.keys) {
-        val age = nameToAge[name]
-        println("$name is $age years old")
+    //Print the species counts.
+    for (species in speciesToCount.keys) {
+        val count = speciesToCount[species]
+        println("Number of $species sightings: $count")
     }
 }
