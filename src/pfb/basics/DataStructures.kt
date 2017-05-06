@@ -6,7 +6,11 @@ fun main(args: Array<String>) {
     nameToAge.put("Luna", 16)
     nameToAge.put("Snape", 36)
 
-    println("Harry's age: " + nameToAge["Harry"])
-    println("Luna's age: " + nameToAge["Luna"])
-    println("Snape's age: " + nameToAge["Snape"])
+    nameToAge.put("Luna", 17)
+    nameToAge.remove("Snape")
+
+    for (name in nameToAge.keys) {
+        val age = nameToAge[name]
+        println("$name is $age years old")
+    }
 }
