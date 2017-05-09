@@ -10,7 +10,8 @@ fun main(args: Array<String>) {
     val noGaps = mutableListOf<String>()
     for (sighting in sightings) {
         if (sighting != "") {
-            noGaps.add(sighting)
+            val LowerSighting = sighting.toLowerCase()
+            noGaps.add(LowerSighting)
         }
     }
 
