@@ -4,20 +4,16 @@ import java.nio.file.Files
 import java.nio.file.Paths
 
 fun main(args: Array<String>) {
-    val helloWorld = Paths.get("files/BirdListWithGaps.txt")
-    val birds = Files.readAllLines(helloWorld)
+    val helloWorld = Paths.get("files/BirdListWithGapsAndCaps.txt")
+    val sightings = Files.readAllLines(helloWorld)
 
-    // create the list from the file
-    val listOfBirds = mutableSetOf<String>()
-    for (bird in birds) {
-        if (bird != "") {
-            listOfBirds.add(bird)
+    val noGaps = mutableListOf<String>()
+    for (sighting in sightings) {
+        if (sighting != "") {
+            noGaps.add(sighting)
         }
     }
 
-    // total species
-    val totalSpecies = listOfBirds.size
-    println()
-    println("A total of $totalSpecies species were seen.")
+    val reformatted = Paths.get("files/Reformatted.txt")
+    Files.write(reformatted, noGaps)
 }
-
