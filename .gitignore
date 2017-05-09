@@ -13,3 +13,7 @@ hs_err_pid*
 
 
 **/out/*
+
+# Ignore user specific IntelliJ files
+**/*/workspace.xml
+**/*/tasks.xml
