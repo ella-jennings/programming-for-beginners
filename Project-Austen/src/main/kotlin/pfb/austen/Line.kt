@@ -3,14 +3,10 @@ package pfb.austen
 /**
  * Represents a line of text read in from a book.
  */
+
+
 class Line(line : String) {
-
     val words = mutableListOf<String>()
-
-    /**
-     * initialisation block between field
-     * values and functions
-     */
 
     init {
         var currentWord = ""
@@ -22,10 +18,13 @@ class Line(line : String) {
                 currentWord = currentWord + c
             }
         }
-        words.add(currentWord)
+        if (currentWord != "") {
+            words.add(currentWord)
+        }
+
     }
-    fun words() : List<String> {
+
+    fun words(): List<String> {
         return words
     }
 }
-
