@@ -28,4 +28,12 @@ class LineTest {
         Assert.assertEquals("hello", words[0])
         Assert.assertEquals("there", words[1])
     }
+
+    @Test fun doubleSpace() {
+        val line = Line("a  b")
+        val words = line.words()
+        Assert.assertEquals(2, words.size.toLong())
+        Assert.assertEquals("a", words[0])
+        Assert.assertEquals("b", words[1])
+    }
 }
