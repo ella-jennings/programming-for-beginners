@@ -27,7 +27,7 @@ class Line(line : String) {
 
     fun addWord(str: String) {
         if (str != "") {
-            words.add(str)
+            words.add(str.toLowerCase())
         }
     }
 }
