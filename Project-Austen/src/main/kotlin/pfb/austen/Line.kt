@@ -18,8 +18,11 @@ class Line(line : String) {
                 currentWord = currentWord + c
             }
         }
-        addWord(currentWord)
 
+        addWord(currentWord)
+        if (currentWord != "") {
+            words.add(currentWord)
+        }
     }
 
     fun words(): List<String> {
@@ -31,4 +34,5 @@ class Line(line : String) {
             words.add(str)
         }
     }
+
 }
