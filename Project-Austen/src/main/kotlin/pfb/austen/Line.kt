@@ -12,19 +12,23 @@ class Line(line : String) {
         var currentWord = ""
         for (c in line) {
             if (c == ' ') {
-                words.add(currentWord)
+                addWord(currentWord)
                 currentWord = ""
             } else {
                 currentWord = currentWord + c
             }
         }
-        if (currentWord != "") {
-            words.add(currentWord)
-        }
+        addWord(currentWord)
 
     }
 
     fun words(): List<String> {
         return words
+    }
+
+    fun addWord(str: String) {
+        if (str != "") {
+            words.add(str)
+        }
     }
 }
