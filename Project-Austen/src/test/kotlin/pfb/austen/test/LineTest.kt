@@ -36,4 +36,12 @@ class LineTest {
         Assert.assertEquals("a", words[0])
         Assert.assertEquals("b", words[1])
     }
+
+    @Test fun wordsAreLowerCase() {
+        val line = Line("Hello THERE")
+        val words = line.words()
+        Assert.assertEquals(2, words.size.toLong())
+        Assert.assertEquals("hello", words[0])
+        Assert.assertEquals("there", words[1])
+    }
 }
