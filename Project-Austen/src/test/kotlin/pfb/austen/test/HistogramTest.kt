@@ -17,4 +17,15 @@ public class HistogramTest {
         val given = histogram.numberOfTimesGiven("xylophone")
         Assert.assertEquals(0, given)
     }
+
+    @Test
+    fun recordOneWord() {
+        val histogram = Histogram()
+        histogram.record("piano")
+        val words = histogram.allWords()
+        Assert.assertEquals(1, words.size)
+        Assert.assertTrue(words.contains("piano"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("piano"))
+
+    }
 }
