@@ -25,7 +25,17 @@ public class HistogramTest {
         val words = histogram.allWords()
         Assert.assertEquals(1, words.size)
         Assert.assertTrue(words.contains("piano"))
-        Assert.assertEquals(1, histogram.numberOfTimesGiven("piano"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("piano"))@
+    }
 
+    @Test
+    fun recordOneWordTwice() {
+        val histogram = Histogram()
+        histogram.record("piano")
+        histogram.record("piano")
+        val words = histogram.allWords()
+        Assert.assertEquals(1, words.size)
+        Assert.assertTrue(words.contains("piano"))
+        Assert.assertEquals(2, histogram.numberOfTimesGiven() )
     }
 }
