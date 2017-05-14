@@ -5,13 +5,21 @@ package pfb.austen
  */
 class Histogram {
 
-    fun record(word: String)
+    // declares counter field
+    val counter = mutableMapOf<String, Int>()
 
-    fun allWords(): Set<String> {
-        return mutableSetOf()
+    fun record(word: String) {
+        val currentCount = counter[word] ?: 0
+        val newCount = currentCount + 1
+        counter.put(word, newCount)
     }
 
+    fun allWords(): Set<String> {
+        return counter.keys
+    }
+
+    // get string from Map
     fun numberOfTimesGiven(word: String): Int {
-        return 0
+        return counter[word] ?: 0
     }
 }

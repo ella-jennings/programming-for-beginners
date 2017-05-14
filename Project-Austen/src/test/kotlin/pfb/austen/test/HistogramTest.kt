@@ -4,7 +4,7 @@ import org.junit.Assert
 import org.junit.Test
 import pfb.austen.Histogram
 
-public class HistogramTest {
+class HistogramTest {
     @Test
     fun emptyToStartWith() {
         val histogram = Histogram()
@@ -25,7 +25,7 @@ public class HistogramTest {
         val words = histogram.allWords()
         Assert.assertEquals(1, words.size)
         Assert.assertTrue(words.contains("piano"))
-        Assert.assertEquals(1, histogram.numberOfTimesGiven("piano"))@
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("piano"))
     }
 
     @Test
@@ -36,6 +36,19 @@ public class HistogramTest {
         val words = histogram.allWords()
         Assert.assertEquals(1, words.size)
         Assert.assertTrue(words.contains("piano"))
-        Assert.assertEquals(2, histogram.numberOfTimesGiven() )
+        Assert.assertEquals(2, histogram.numberOfTimesGiven("piano"))
+    }
+
+    @Test
+    fun recordTwoWords() {
+        val histogram = Histogram()
+        histogram.record("piano")
+        histogram.record("violin")
+        val words = histogram.allWords()
+        Assert.assertTrue(words.contains("piano"))
+        Assert.assertTrue(words.contains("violin"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("piano"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("violin"))
+        Assert.assertEquals(2, words.size)
     }
 }
