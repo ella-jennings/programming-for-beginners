@@ -48,10 +48,12 @@ class BookTest {
         Assert.assertEquals(1, book.histogram.numberOfTimesGiven("night"))
     }
 
-    @Test bookOfCalm {
+    @Test fun bookOfCalm() {
         val book =
                 Book(Paths.get("src/test/resources/books/TheLittleBookOfCalm.txt"))
         val histogram = book.histogram
+
+        print(histogram.allWords())
 
         Assert.assertEquals(2, histogram.numberOfTimesGiven("this"))
         Assert.assertEquals(1, histogram.numberOfTimesGiven("is"))
