@@ -64,4 +64,12 @@ class LineTest {
         Assert.assertEquals("x", words[2])
         Assert.assertEquals("5", words[3])
     }
+
+    @Test fun doubleQuotes() {
+        val line = Line("\"It's not.\"")
+        val words = line.words()
+        Assert.assertEquals(2, words.size)
+        Assert.assertEquals("it's", words[0])
+        Assert.assertEquals("not", words[1])
+    }
 }
