@@ -3,6 +3,7 @@ package pfb.austen.test
 import org.junit.Assert
 import org.junit.Test
 import pfb.austen.Book
+import java.nio.file.Path
 import java.nio.file.Paths
 
 class BookTest {
@@ -45,5 +46,24 @@ class BookTest {
         Assert.assertEquals(1, book.histogram.numberOfTimesGiven("and"))
         Assert.assertEquals(1, book.histogram.numberOfTimesGiven("stormy"))
         Assert.assertEquals(1, book.histogram.numberOfTimesGiven("night"))
+    }
+
+    @Test bookOfCalm {
+        val book =
+                Book(Paths.get("src/test/resources/books/TheLittleBookOfCalm.txt"))
+        val histogram = book.histogram
+
+        Assert.assertEquals(2, histogram.numberOfTimesGiven("this"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("is"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("a"))
+        Assert.assertEquals(3, histogram.numberOfTimesGiven("very"))
+        Assert.assertEquals(2, histogram.numberOfTimesGiven("short"))
+        Assert.assertEquals(2, histogram.numberOfTimesGiven("book"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("we"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("hope"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("that"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("you"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("find"))
+        Assert.assertEquals(1, histogram.numberOfTimesGiven("calming"))
     }
 }
